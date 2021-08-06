@@ -9,7 +9,6 @@ function Products() {
         fetch('http://localhost:3030/api/users')
             .then(response => response.json())
             .then(data => {
-                console.log(data.data);
                 setUsers(data.data)
             })
             .catch(error => console.log(error))
@@ -25,7 +24,7 @@ function Products() {
 
     return (
         <div>
-            <h2>Users</h2>
+            <h2>Users: {users.length}</h2>
             <ul>
                 { users.length === 0 && <p>Cargando</p> }
                 {

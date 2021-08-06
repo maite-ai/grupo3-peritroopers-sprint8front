@@ -1,4 +1,5 @@
 /*{ ==> VERSIÓN HOOKS <== }*/
+//import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 function Products() {
@@ -24,7 +25,7 @@ function Products() {
 
     return (
         <div>
-            <h2>Products</h2>
+            <h2>Products: {products.length}</h2>
             <ul>
                 { products.length === 0 && <p>Cargando</p> }
                 {
@@ -36,6 +37,7 @@ function Products() {
                                 <p>{product.brand}</p>
                                 <p>{product.category}</p>
                                 <p>{product.color}</p>
+                                <p>{product.url}</p>
                             </li>
                         )
                     })

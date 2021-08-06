@@ -2,17 +2,32 @@ import React from 'react';
 import foto from '../assets/images/logo-grupo.gif';
 import logo from '../assets/images/logo1.gif';
 
+import { Link } from 'react-router-dom';
+
 function TopBar(){
     return(
         <React.Fragment>
 				{/*<!-- Topbar -->*/}
 				<nav className="navbar navbar-expand-lg navbar-light bg-light topbar mb-4 static-top shadow">
 
-					<a><img src={foto} width="200" height="70" className="d-inline-block align-top" alt="" loading="lazy"></img></a>
+					<img src={foto} width="200" height="70" className="d-inline-block align-top" alt="" loading="lazy"></img>
                     {/*<!-- Sidebar Toggle (Topbar) -->*/}
-					<button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
-						<i className="fa fa-bars"></i>
+					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span className="navbar-toggler-icon"></span>
 					</button>
+					<div className="collapse navbar-collapse" id="navbarNav">
+						<ul className="navbar-nav">
+						<li className="nav-item active">
+							<Link className="nav-link" exact='true' to='/'>Home <span className="sr-only">(current)</span></Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/api/products">Products</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/api/users">Users</Link>
+						</li>
+						</ul>
+					</div>
 
 					{/*<!-- Topbar Navbar -->*/}
 					<ul className="navbar-nav ml-auto">
