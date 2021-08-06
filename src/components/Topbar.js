@@ -1,10 +1,6 @@
 import React from 'react';
 import foto from '../assets/images/logo-grupo.gif';
 import logo from '../assets/images/logo1.gif';
-import Users from './Users';
-import Products from './Products';
-
-//import {Link, Route, Switch} from 'react-router-dom';
 
 function TopBar(){
     return(
