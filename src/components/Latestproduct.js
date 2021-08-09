@@ -24,15 +24,16 @@ function LatestProduct() {
 
     return(
         <div>
-            <h2>Último Producto Creado:</h2>
+            <h2>Último Producto Creado:</h2><br/>
             {latestProduct &&
-            <ul>
-                <li>Nombre: {latestProduct.name}</li>
-                <li>Descripción: {latestProduct.description}</li>
-                <li>Marca: {latestProduct.brand}</li>
-                <li>Categoría: {latestProduct.category}</li>
-                <li>Color: {latestProduct.color}</li>
-            </ul>
+                <div>
+                    <h3>{latestProduct.name}</h3>
+                    <img src={latestProduct.image} width="200" height="200" alt="img"></img>
+                    <p>{latestProduct.description}</p>
+                    <p>Marca: {latestProduct.brand}</p>
+                    <p>Categoría: {latestProduct.category}</p>
+                    <p>Color: {latestProduct.color}</p>
+                </div>
             }
         </div>
     )
