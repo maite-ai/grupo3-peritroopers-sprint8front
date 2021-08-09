@@ -71,10 +71,10 @@ function Home() {
 
     return(
         <React.Fragment>
-            <div>
-                <h1>Dashboard Peritroopers</h1>
+            <div className="container">
+                <h1 className="">Dashboard Peritroopers</h1>
                 <ul>
-                    <li>Usuarios en lista: {users.count}</li>
+                    <li><div>Usuarios en lista: {users.count}</div></li>
                     <li>Productos en lista: {products.count}</li>
                     <li>
                         Total por Categoría:
