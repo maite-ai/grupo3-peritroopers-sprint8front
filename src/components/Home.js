@@ -1,4 +1,5 @@
 import React from 'react';
+import LatestProduct from './Latestproduct';
 import { useState, useEffect } from 'react';
 
 function Home() {
@@ -19,6 +20,28 @@ function Home() {
     useEffect(() => {
         console.log('%cse actualizó el componente', 'color: yellow');
     }, [products])
+
+    useEffect(() => {
+        console.log('%cse desmontó el componente', 'color: red');
+    }, [])
+
+    /*==><==*/
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        console.log('%cse montó el componente', 'color: green');
+        fetch('http://localhost:3030/api/products')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.meta.countByCategory);
+                setCategories(data.meta.countByCategory)
+            })
+            .catch(error => console.log(error))
+    }, [])
+
+    useEffect(() => {
+        console.log('%cse actualizó el componente', 'color: yellow');
+    }, [categories])
 
     useEffect(() => {
         console.log('%cse desmontó el componente', 'color: red');
@@ -51,9 +74,19 @@ function Home() {
             <div>
                 <h1>Dashboard Peritroopers</h1>
                 <ul>
-                    <li>Productos en lista: {products.count}</li>
                     <li>Usuarios en lista: {users.count}</li>
+                    <li>Productos en lista: {products.count}</li>
+                    <li>
+                        Total por Categoría:
+                        <ul>
+                            <li>Teclados: {categories.Teclados}</li>
+                            <li>Auriculares: {categories.Aurículares}</li>
+                            <li>Mouses: {categories.Mouses}</li>
+                            <li>Micrófonos: {categories.Micrófonos}</li>
+                        </ul>
+                    </li>
                 </ul>
+                <LatestProduct/>
             </div>
         </React.Fragment>
     )
