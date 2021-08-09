@@ -4,48 +4,36 @@ function LatestProduct() {
     const [latestProduct, setLatestProduct] = useState();
 
     useEffect(() => {
-        console.log('%chola', 'color: green');
+        console.log('%cse montó el componente', 'color: green');
         fetch('http://localhost:3030/api/products/latest')
             .then(response => response.json())
             .then(data => {
                 console.log(data.data);
-                setLatestProduct([
-                    " --- Nombre: ",
-                    data.data.name,
-                    " --- Descripción: ",
-                    data.data.description,
-                    " --- Marca: ",
-                    data.data.brand,
-                    " --- Categoría: ",
-                    data.data.category,
-                    " --- Color: ",
-                    data.data.color,
-                ]);
+                setLatestProduct(data.data);
             })
             .catch(error => console.log(error))
     }, [])
 
     useEffect(() => {
-        console.log('%chola2', 'color: yellow');
+        console.log('%cse actualizó el componente', 'color: yellow');
     }, [latestProduct])
 
     useEffect(() => {
-        console.log('%cchau', 'color: red');
+        console.log('%cse desmontó el componente', 'color: red');
     }, [])
 
     return(
         <div>
             <h2>Último Producto Creado:</h2>
+            {latestProduct &&
             <ul>
-                <li>
-                    <h2>{latestProduct}</h2>
-                    {/*<h4>{latestProduct}</h4>
-                    <p>{latestProduct}</p>
-                    <p>{latestProduct.category}</p>
-                    <p>{latestProduct.color}</p>
-                    <p>{latestProduct.url}</p>*/}
-                </li>
+                <li>Nombre: {latestProduct.name}</li>
+                <li>Descripción: {latestProduct.description}</li>
+                <li>Marca: {latestProduct.brand}</li>
+                <li>Categoría: {latestProduct.category}</li>
+                <li>Color: {latestProduct.color}</li>
             </ul>
+            }
         </div>
     )
 }
