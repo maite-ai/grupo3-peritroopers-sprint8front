@@ -1,5 +1,6 @@
 import React from 'react';
-import LatestProduct from './Latestproduct';
+import LatestProduct from './LatestProduct';
+import LatestUser from './LatestUser';
 import { useState, useEffect } from 'react';
 
 function Home() {
@@ -87,6 +88,8 @@ function Home() {
                     </li>
                 </ul>
                 <LatestProduct/>
+                <br/>
+                <LatestUser/>
             </div>
         </React.Fragment>
     )
