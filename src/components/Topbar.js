@@ -3,12 +3,16 @@ import foto from '../assets/images/logo-grupo.gif';
 import logo from '../assets/images/logo.gif';
 
 import { Link } from 'react-router-dom';
+const styleBg = {
+	backgroundColor: '#180a41',
+	fontFamily: 'Monospace'
+}
 
 function TopBar(){
     return(
         <React.Fragment>
 				{/*<!-- Topbar -->*/}
-				<nav className="navbar navbar-expand-lg navbar-dark navbar-blue bg-dark topbar mb-5 static-top shadow">
+				<nav className="navbar navbar-expand-lg navbar-dark bg-blue topbar mb-5 fixed-top shadow" style={styleBg}>
 
 					<img src={logo} width="200" height="60" className="d-inline-block align-top" alt="" loading="lazy"></img>
                     {/*<!-- Sidebar Toggle (Topbar) -->*/}
