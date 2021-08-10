@@ -24,12 +24,14 @@ function LatestProduct() {
 
     return(
         <div>
-            <h2>Último Producto Creado:</h2><br/>
+            <h2 className="text-dark text-center">Último Producto Creado</h2><br/>
             {latestProduct &&
-                <div className="card shadow">
+                <div className="card shadow justify-content-center">
                     <h3 className="card-header text-primary">{latestProduct.name}</h3>
-                    <img src={latestProduct.image} width="200" height="200" alt="img"></img>
-                    <div className="card-body">
+                    <div className="text-center">
+                        <img src={latestProduct.image} width="280" height="280" alt="img"></img>
+                    </div>
+                    <div className="card-body justify-content-start">
                         <p>{latestProduct.description}</p>
                         <div>
                             <span className="text-dark">Marca: </span>

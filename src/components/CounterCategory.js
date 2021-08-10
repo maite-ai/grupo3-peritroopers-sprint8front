@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react';
 
-const styleCenter = {
-    margin: '10px 37%'
-}
-
 function CounterCategory() {
     /*==><==*/
     const [categories, setCategories] = useState([]);
@@ -26,12 +22,13 @@ function CounterCategory() {
     useEffect(() => {
         console.log('%cse desmontó el componente', 'color: red');
     }, [])
-
+    
     return(
-        <div className="container d-flex justify-content-lg-between"  style={styleCenter}>
-            <ul className="list-group">
-            <h2>Totales por Categorías</h2>
+        <div className="container">
+            <h2 className="text-center text-dark">Totales por Categorías</h2>
             <br></br>
+            <div className="row justify-content-center">
+            <ul className="list-group col-3">
                 <li className="list-group-item d-flex justify-content-between align-items-center shadow">
                     Teclados
                     <span className="badge bg-success rounded-pill text-light">{categories.Teclados}</span>
@@ -50,6 +47,8 @@ function CounterCategory() {
                 </li>
             </ul>
         </div>
+        </div>
+        
     )
 }
 

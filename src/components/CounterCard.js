@@ -8,9 +8,6 @@ const styleRounded = {
     color: 'white',
     boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)'
 }
-const styleButton = {
-    marginLeft: '10px',
-}
 
 function CounterCard() {
     /*==>PRODUCTS HOOK<==*/
@@ -59,25 +56,25 @@ function CounterCard() {
 
     return(
         <div className="container">
-            <div className="row justify-content-md-center">
+            <div className="row justify-content-center">
                 <div className="col-sm-4">
-                    <div className="card shadow">
+                    <div className="card shadow justify-content-center">
                         <div className="card-body">
                             <h5 className="card-header text-center">Usuarios en lista</h5>
                             <p className="badge rounded-pill card-text" style={styleRounded}>{users.count}</p>
                             <div className= "d-grid gap-2 col-sm-6 mx-auto justify-content-md-center">
-                                <Link className="btn btn-outline-primary" style={styleButton} to="/api/users">Ver Listado</Link>
+                                <Link className="btn btn-outline-primary justify-content-center" to="/api/users">Ver Listado</Link>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-sm-4">
-                    <div className="card shadow">
+                    <div className="card shadow justify-content-center">
                         <div className="card-body">
                             <h5 className="card-header text-center">Productos en lista</h5>
                             <div className="badge rounded-pill card-text" style={styleRounded}>{products.count}</div>
                             <div className= "d-grid col-sm-6 mx-auto justify-content-md-center">
-                                <Link className="btn btn-outline-primary" style={styleButton} to="/api/products">Ver Listado</Link>
+                                <Link className="btn btn-outline-primary justify-content-center" to="/api/products">Ver Listado</Link>
                             </div>
                         </div>
                     </div>

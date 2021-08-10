@@ -15,16 +15,16 @@ function Home() {
     return(
         <React.Fragment>
             <div className="container">
-                <h1 className="text-center text-info jumbotron" style={styleTipo}>Dashboard Peritroopers</h1>
+                <h1 className="text-center text-primary jumbotron" style={styleTipo}>Dashboard Peritroopers</h1>
                 <CounterCard/>
                 <br/><br/>
                 <CounterCategory/>
                 <br/><br/>
                 <div className="row">
-                    <div className="col-sm-6">
+                    <div className="col-sm-5">
                         <LatestProduct/>
                     </div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-7">
                         <LatestUser/>
                     </div>                
                 </div>

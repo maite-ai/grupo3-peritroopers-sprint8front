@@ -1,6 +1,13 @@
 /*{ ==> VERSIÓN HOOKS <== }*/
 import { useState, useEffect } from "react";
 
+const styleTipo = {
+	fontFamily: 'Monospace',
+    backgroundColor: '#FFFFFF',
+    marginTop: '60px',
+    marginBottom: '0px'
+}
+
 function Products() {
     const [products, setProducts] = useState([]);
 
@@ -24,26 +31,43 @@ function Products() {
     }, [])
 
     return (
-        <div>
-            <h2>Total de Productos: {products.length}</h2>
-            <ul>
+        <div className="container">
+            <h1 className="text-primary jumbotron" style={styleTipo}>Productos</h1>
+            <span className="text-dark ms-2 h3">Total de Productos: </span>
+            <span className="text-success h2 bold">{products.length}</span>
+            <div className="row d-grid gap-3">
                 { products.length === 0 && <p>Cargando</p> }
                 {
                     products.map((product, i) => {
                         return(
-                            <li key={i}>
-                                <h2>{product.name}</h2>
-                                <img src={product.image} width="200" height="200" alt="img"></img>
-                                <h4>{product.description}</h4>
-                                <p>Marca: {product.brand}</p>
-                                <p>Categoría: {product.category}</p>
-                                <p>Color: {product.color}</p>
-                                <p>{product.url}</p>
-                            </li>
+                            <div className="my-4 mx-4 card shadow col-md-5" key={i}>
+                                <div className="text-center my-4">
+                                    <img src={product.image} width="260" height="260" alt="img"></img>
+                                </div>
+                                <div className="card-body">
+                                <h4 className="text-info text-left">{product.name}</h4>
+                                    <p className="card-description">{product.description}</p>
+                                </div>
+                                <div className="card-footer">
+                                    <div>
+                                        <span className="text-dark bold">Marca: </span>
+                                        <span>{product.brand}</span>
+                                    </div>
+                                    <div>
+                                        <span className="text-dark bold">Categoría: </span>
+                                        <span>{product.category}</span>
+                                    </div>
+                                    <div>
+                                        <span className="text-dark bold">Color: </span>
+                                        <span>{product.color}</span>
+                                    </div>
+                                    <span className="text-primary">{product.url}</span>
+                                </div>    
+                            </div>                                 
                         )
                     })
                 }
-            </ul>
+            </div>
         </div>
     )
 }
