@@ -1,6 +1,13 @@
 /*{ ==> VERSIÓN HOOKS <== }*/
 import { useState, useEffect } from "react";
 
+const styleTipo = {
+	fontFamily: 'Monospace',
+    backgroundColor: '#FFFFFF',
+    marginTop: '60px',
+    marginBottom: '0px'
+}
+
 function Products() {
     const [users, setUsers] = useState([]);
 
@@ -24,23 +31,29 @@ function Products() {
     }, [])
 
     return (
-        <div>
-            <h2>Total de Usuarios: {users.length}</h2>
-            <ul>
+        <div className="fluid container">
+            <h1 className="text-primary jumbotron" style={styleTipo}>Usuarios</h1>
+            <span className="text-dark h3">Total de Usuarios: </span>
+            <span className="text-success h2 bold">{users.length}</span>
+            <div className="my-4 mx-4 card col-7">
                 { users.length === 0 && <p>Cargando</p> }
                 {
                     users.map((user, i) => {
                         return(
-                            <li key={i}>
-                                <img src={user.avatar} width="200" height="200" alt="img"></img>
-                                <h2>{user.name} {user.lastName}</h2>
-                                <h4>{user.email}</h4>
-                                <p>{user.detail}</p>
-                            </li>
+                            <div className="row card-body shadow justify-content-center" key={i}>
+                                <div className="col"> 
+                                    <img width="150" height="150" src={user.avatar} alt="img"></img>
+                                </div>
+                                <div className="col-6"> 
+                                    <h3 className="text-info">{user.name} {user.lastName}</h3>
+                                    <p className="card-description text-dark">{user.email}</p>                                   
+                                    <p className="card-description text-dark">{user.detail}</p>
+                                </div>
+                            </div>                             
                         )
                     })
                 }
-            </ul>
+            </div>
         </div>
     )
 }

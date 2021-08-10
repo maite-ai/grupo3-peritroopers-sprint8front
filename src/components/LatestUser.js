@@ -23,15 +23,29 @@ function LatestUser() {
     }, [])
 
     return(
-        <div>
-            <h2>Último Usuario Creado:</h2><br/>
+        <div class="container">
+            <h2 className="text-dark text-center">Último Usuario Creado</h2><br/>
             {latestUser &&
-                <div>
-                    <img src={latestUser.avatar} width="200" height="200" alt="img"></img>
-                    <h3>{latestUser.name} {latestUser.lastName}</h3>
-                    <p>Fecha de Nacimiento: {latestUser.birthDate}</p>
-                    <p>Email: {latestUser.email}</p>
+                <div className="card">
+                    <div className="row card-body">
+                        <div className="col">
+                            <img className="img-fluid img-thumbnail rounded" src={latestUser.avatar} alt="img"></img>
+                        </div>
+                        <div className="col-7">
+                            <h3 className="text-primary">{latestUser.name} {latestUser.lastName}</h3>
+                            <div>
+                                <span className="h6 text-dark">Fecha de Nacimiento: </span>
+                                <span> {latestUser.birthDate}</span>
+                            </div>
+                            <div>
+                                <span className="h6 text-dark">Email: </span>
+                                <span>{latestUser.email}</span>
+                            </div>
+                        </div>                        
+                    </div>
                 </div>
+                
+                
             }
         </div>
     )
