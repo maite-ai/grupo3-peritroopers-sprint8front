@@ -52,18 +52,22 @@ function CounterCard() {
                 <div className="col-sm-6">
                     <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">Usuarios en lista</h5>
-                            <p className="card-text">{users.count}</p>
-                            <Link className="btn btn-primary" to="/api/users">Ver Listado de Usuarios</Link>
+                            <h4 className="card-header">Usuarios en lista</h4>
+                            <p className="card-text text-center h4">{users.count}</p>
+                            <div className= "d-grid gap-2 col-6 mx-auto">
+                                <Link className="btn btn-outline-primary justify-content-center" to="/api/users">Ver Listado de Usuarios</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-sm-6">
                     <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">Productos en lista</h5>
-                            <p className="card-text">{products.count}</p>
-                            <Link className="btn btn-primary" to="/api/products">Ver Listado de Productos</Link>
+                            <h4 className="card-header">Productos en lista</h4>
+                            <p className="card-text text-center h4">{products.count}</p>
+                            <div className= "d-grid gap-2 col-6 mx-auto">
+                                <Link className="btn btn-outline-primary justify-content-center" to="/api/products">Ver Listado de Productos</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

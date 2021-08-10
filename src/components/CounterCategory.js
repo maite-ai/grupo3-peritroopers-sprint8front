@@ -24,8 +24,9 @@ function CounterCategory() {
     }, [])
 
     return(
-        <div className="container">
+        <div className="container d-flex justify-content-lg-between">
             <ul className="list-group">
+            <h2>Totales por Categorías</h2>
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                     Teclados
                     <span className="badge bg-success rounded-pill text-light">{categories.Teclados}</span>
