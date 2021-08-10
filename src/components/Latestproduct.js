@@ -26,13 +26,29 @@ function LatestProduct() {
         <div>
             <h2>Último Producto Creado:</h2><br/>
             {latestProduct &&
-                <div>
-                    <h3>{latestProduct.name}</h3>
+                <div className="card shadow">
+                    <h3 className="card-header text-primary">{latestProduct.name}</h3>
                     <img src={latestProduct.image} width="200" height="200" alt="img"></img>
-                    <p>{latestProduct.description}</p>
-                    <p>Marca: {latestProduct.brand}</p>
-                    <p>Categoría: {latestProduct.category}</p>
-                    <p>Color: {latestProduct.color}</p>
+                    <div className="card-body">
+                        <p>{latestProduct.description}</p>
+                        <div>
+                            <span className="text-dark">Marca: </span>
+                            <span>{latestProduct.brand}</span>
+                        </div>
+                        
+                        <div>
+                            <span className="text-dark">Categoría: </span>
+                            <span>{latestProduct.category}</span>
+                        </div>
+                        
+                        <div>
+                            <span className="text-dark">Color: </span>
+                            <span>{latestProduct.color}</span>
+                        </div>
+                    </div>
+                    <div className="card-footer">
+                        <span className="text-success h5">$ {latestProduct.price}</span>
+                    </div>
                 </div>
             }
         </div>

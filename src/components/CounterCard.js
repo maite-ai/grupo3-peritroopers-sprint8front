@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+const styleRounded = {
+    margin: '10px 8.1vw',
+    fontSize: '23px',
+    backgroundColor: '#4e73df', 
+    color: 'white',
+    boxShadow: '2px 2px 2px 1px rgba(0, 0, 0, 0.2)'
+}
+const styleButton = {
+    marginLeft: '10px',
+}
+
 function CounterCard() {
     /*==>PRODUCTS HOOK<==*/
     const [products, setProducts] = useState([]);
@@ -48,25 +59,25 @@ function CounterCard() {
 
     return(
         <div className="container">
-            <div className="row">
-                <div className="col-sm-6">
-                    <div className="card">
+            <div className="row justify-content-md-center">
+                <div className="col-sm-4">
+                    <div className="card shadow">
                         <div className="card-body">
-                            <h4 className="card-header">Usuarios en lista</h4>
-                            <p className="card-text text-center h4">{users.count}</p>
-                            <div className= "d-grid gap-2 col-6 mx-auto">
-                                <Link className="btn btn-outline-primary justify-content-center" to="/api/users">Ver Listado de Usuarios</Link>
+                            <h5 className="card-header text-center">Usuarios en lista</h5>
+                            <p className="badge rounded-pill card-text" style={styleRounded}>{users.count}</p>
+                            <div className= "d-grid gap-2 col-sm-6 mx-auto justify-content-md-center">
+                                <Link className="btn btn-outline-primary" style={styleButton} to="/api/users">Ver Listado</Link>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-6">
-                    <div className="card">
+                <div className="col-sm-4">
+                    <div className="card shadow">
                         <div className="card-body">
-                            <h4 className="card-header">Productos en lista</h4>
-                            <p className="card-text text-center h4">{products.count}</p>
-                            <div className= "d-grid gap-2 col-6 mx-auto">
-                                <Link className="btn btn-outline-primary justify-content-center" to="/api/products">Ver Listado de Productos</Link>
+                            <h5 className="card-header text-center">Productos en lista</h5>
+                            <div className="badge rounded-pill card-text" style={styleRounded}>{products.count}</div>
+                            <div className= "d-grid col-sm-6 mx-auto justify-content-md-center">
+                                <Link className="btn btn-outline-primary" style={styleButton} to="/api/products">Ver Listado</Link>
                             </div>
                         </div>
                     </div>

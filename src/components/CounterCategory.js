@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 
+const styleCenter = {
+    margin: '10px 37%'
+}
+
 function CounterCategory() {
     /*==><==*/
     const [categories, setCategories] = useState([]);
@@ -24,22 +28,23 @@ function CounterCategory() {
     }, [])
 
     return(
-        <div className="container d-flex justify-content-lg-between">
+        <div className="container d-flex justify-content-lg-between"  style={styleCenter}>
             <ul className="list-group">
             <h2>Totales por Categorías</h2>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
+            <br></br>
+                <li className="list-group-item d-flex justify-content-between align-items-center shadow">
                     Teclados
                     <span className="badge bg-success rounded-pill text-light">{categories.Teclados}</span>
                 </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
+                <li className="list-group-item d-flex justify-content-between align-items-center shadow">
                     Auriculares
                     <span className="badge bg-success rounded-pill text-light">{categories.Aurículares}</span>
                 </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
+                <li className="list-group-item d-flex justify-content-between align-items-center shadow">
                     Mouses
                     <span className="badge bg-success rounded-pill text-light">{categories.Mouses}</span>
                 </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center">
+                <li className="list-group-item d-flex justify-content-between align-items-center shadow">
                     Micrófonos
                     <span className="badge bg-success rounded-pill text-light">{categories.Micrófonos}</span>
                 </li>
