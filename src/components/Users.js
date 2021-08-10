@@ -33,7 +33,7 @@ function Products() {
     return (
         <div className="fluid container">
             <h1 className="text-primary jumbotron" style={styleTipo}>Usuarios</h1>
-            <span className="text-dark h3">Total de Usuarios: </span>
+            <span className="text-dark ms-2 h3">Total de Usuarios: </span>
             <span className="text-success h2 bold">{users.length}</span>
             <div className="my-4 mx-4 card col-7">
                 { users.length === 0 && <p>Cargando</p> }

@@ -33,7 +33,7 @@ function Products() {
     return (
         <div className="container">
             <h1 className="text-primary jumbotron" style={styleTipo}>Productos</h1>
-            <span className="text-dark h3">Total de Productos: </span>
+            <span className="text-dark ms-2 h3">Total de Productos: </span>
             <span className="text-success h2 bold">{products.length}</span>
             <div className="row d-grid gap-3">
                 { products.length === 0 && <p>Cargando</p> }
